@@ -1,0 +1,25 @@
+{
+  "name": "websitetemplate",
+  "version": "1.0.0",
+  "description": "template para website multiproposito",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gersomsim/website-template.git"
+  },
+  "keywords": [
+    "website",
+    "html5",
+    "stylus",
+    "template"
+  ],
+  "author": "Gersom Hernandez Ramos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gersomsim/website-template/issues"
+  },
+  "homepage": "https://github.com/Gersomsim/website-template#readme"
+}

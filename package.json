@@ -4,7 +4,7 @@
   "description": "template para website multiproposito",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
+    "start": "webpack serve --mode development --open --live-reload",
     "build": "webpack --mode production"
   },
   "repository": {
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/Gersomsim/website-template#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
     "postcss": "^8.4.14",
@@ -36,7 +37,9 @@
     "stylus-loader": "^7.0.0",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
+    "webpack-dev-middleware": "^5.3.3",
     "webpack-dev-server": "^4.9.1",
     "webpack-stream": "^7.0.0"
-  }
+  },
+  "proxy": "http://localhost:3000"
 }

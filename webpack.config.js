@@ -1,11 +1,28 @@
 
 const path = require('path');
 const pugPlugin = require('pug-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    static: {
+      directory: "./dist",
+      watch: {
+        ignored: '/node_modules/',
+        usePolling: true,
+      },
+    },
+    hot: false,
+    port: 3000,
+    devMiddleware: {
+      index: true,
+      mimeTypes: { phtml: 'text/html' },
+      publicPath: './dist',
+      serverSideRender: true,
+      writeToDisk: true,
+    },
   },
+  target: 'web',
   output: {
     path: path.join(__dirname, 'dist/'),
     publicPath: './',
@@ -20,15 +37,6 @@ module.exports = {
     // Only Pug files
     index: './src/views/index.pug',
   },
-  plugins: [
-    new pugPlugin({
-      modules: [
-        pugPlugin.extractCss({
-          filename: '[name].[contenthash].css',
-        })
-      ]
-    }),
-  ],
   module: {
     rules: [
       {
@@ -37,6 +45,17 @@ module.exports = {
         generator: {
           filename: 'assets/img/[name].[hash:8][ext]',
         },
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { 
+            loader: "css-loader",
+          },
+          { 
+            loader: "postcss-loader",
+          },
+        ]
       },
       {
         test: /\.pug$/,
@@ -69,4 +88,16 @@ module.exports = {
       },
     ]
   },
+  plugins: [
+    new CleanWebpackPlugin({
+      dry: true,
+    }),
+    new pugPlugin({
+      modules: [
+        pugPlugin.extractCss({
+          filename: 'assets/css/[name].[contenthash].css',
+        })
+      ]
+    }),
+  ],
 };

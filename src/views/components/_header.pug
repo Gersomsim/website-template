@@ -1,1 +1,26 @@
-p soy la cabeza
+nav.navbar.navbar-expand-lg.sticky-top
+  .container
+    .logo
+      a.navbar-brand(href='#') PUG Template
+    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.mb-2.mb-lg-0.ms-auto
+        li.nav-item
+          a.nav-link.active(aria-current='page' href='#') Home
+        li.nav-item
+          a.nav-link(href='#') Link
+        li.nav-item.dropdown
+          a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+            | Dropdown
+          ul.dropdown-menu(aria-labelledby='navbarDropdown')
+            li
+              a.dropdown-item(href='#') Action
+            li
+              a.dropdown-item(href='#') Another action
+            li
+              hr.dropdown-divider
+            li
+              a.dropdown-item(href='#') Something else here
+        li.nav-item
+          a.nav-link.disabled Disabled

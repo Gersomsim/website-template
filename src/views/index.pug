@@ -4,6 +4,27 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,400;0,600;0,800;1,100;1,200;1,400;1,600;1,800&display=swap' rel='stylesheet')
+    link(rel="stylesheet", href=require("../stylus/bootstrap/bootstrap.min.css"))
     link(rel="stylesheet", href=require("../stylus/app.styl"))
-    title Document
-  body 
+    title Html5 Template
+  body
+    article
+      include components/_header.pug
+      section#parallax
+        .container
+          .py-4.px-2.title
+            h1 Template on PUG
+              br
+              small Powered with Bootstap 5
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut aperiam dolorem tenetur explicabo, tempore, qui ipsa adipisci beatae error aliquid dolorum? Suscipit, deserunt quaerat! Corrupti officia cumque in cupiditate at!
+
+      section#about
+        .container.py-5
+          h2 About
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur aut adipisci in ratione quo repellat consequatur autem, molestias, fugit aliquid, fugiat quod temporibus? Nam assumenda, consequatur voluptates cupiditate ipsam ipsum.
+          p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, vero officia voluptates provident qui veniam porro adipisci esse sunt illo labore dolorum totam consequuntur excepturi velit voluptatem assumenda voluptatibus voluptate.
+          p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, vero officia voluptates provident qui veniam porro adipisci esse sunt illo labore dolorum totam consequuntur excepturi velit voluptatem assumenda voluptatibus voluptate.
+      include components/_footer.pug
